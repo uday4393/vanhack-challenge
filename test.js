@@ -34,16 +34,16 @@ test('Groups products by categories', (t) => {
     t.truthy(clustersMatch);
 });
 
-// test('Recommends products at random with less or equal combined calories of the input', (t) => {
-//     const MAX_COMBINED_CALORIES = 1300;
-//     const recommendedProducts = recommendProducts(MAX_COMBINED_CALORIES);
-//     const caloriesCombined = recommendedProducts.reduce((sum, currentProduct) => sum + currentProduct.servingCalories, 0);
-//     t.truthy(caloriesCombined <= MAX_COMBINED_CALORIES);
-// });
+test('Recommends products at random with less or equal combined calories of the input', (t) => {
+    const MAX_COMBINED_CALORIES = 1300;
+    const recommendedProducts = recommendProducts(MAX_COMBINED_CALORIES);
+    const caloriesCombined = recommendedProducts.reduce((sum, currentProduct) => sum + currentProduct.servingCalories, 0);
+    t.truthy(caloriesCombined <= MAX_COMBINED_CALORIES);
+});
 
-// test('Recommends products creates the list randomly', (t) => {
-//     const MAX_COMBINED_CALORIES = 1300;
-//     const recommendedProductsFirstRun = recommendProducts(MAX_COMBINED_CALORIES).map(product => product.productId).sort().join(',');
-//     const recommendedProductsSecondRun = recommendProducts(MAX_COMBINED_CALORIES).map(product => product.productId).sort().join(',');
-//     t.truthy(recommendedProductsFirstRun !== recommendedProductsSecondRun);
-// });
+test('Recommends products creates the list randomly', (t) => {
+    const MAX_COMBINED_CALORIES = 1300;
+    const recommendedProductsFirstRun = recommendProducts(MAX_COMBINED_CALORIES).map(product => product.productId).sort().join(',');
+    const recommendedProductsSecondRun = recommendProducts(MAX_COMBINED_CALORIES).map(product => product.productId).sort().join(',');
+    t.truthy(recommendedProductsFirstRun !== recommendedProductsSecondRun);
+});
