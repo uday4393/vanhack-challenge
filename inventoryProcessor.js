@@ -13,8 +13,15 @@ const productMostInStock = () => {
 const inventoryClusters = () => {
     // return array of categories
     let result = [];
-    let categories=[];
-    
+    let categories={};
+    products.map(item => {
+        if(categories[item.categories]){
+            categories[item.categories].push(item);
+        }else categories[item.categories] = [item]
+    })
+    for(const item in categories){
+        result.push(categories[item])
+    }
     return result;
 };
 const recommendProducts = (maxCalories) => {

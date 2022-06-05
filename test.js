@@ -2,10 +2,10 @@ const test = require('ava');
 const {getInventory} = require('./inventoryData');
 const {productMostInStock, inventoryClusters, recommendProducts} = require('./inventoryProcessor');
 
-// test('Gets the product with most availability in stock', (t) => {
-//     const PRODUCT_ID_WITH_MAX_STOCK = 18;
-//     t.is(productMostInStock().productId, PRODUCT_ID_WITH_MAX_STOCK);
-// });
+test('Gets the product with most availability in stock', (t) => {
+    const PRODUCT_ID_WITH_MAX_STOCK = 18;
+    t.is(productMostInStock().productId, PRODUCT_ID_WITH_MAX_STOCK);
+});
 
 
 test('Groups products by categories', (t) => {
